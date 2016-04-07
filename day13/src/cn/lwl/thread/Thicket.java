@@ -17,10 +17,13 @@ package cn.lwl.thread;
  			d.锁对象必须是唯一且共享的对象，否则无效
  			
  		2）同步函数
- 			
+ 			同步函数就是使用synchronized修饰一个函数:public synchronized void run()
+ 			a.如果是一个非静态的同步函数的锁，对象是this对象；如果是静态的同步函数，锁对象是当前函数所属类的字节码文件（class对象）
+ 			b.同步函数的锁对象是固定的，无法自己指定
  */
 public class Thicket {
 
+	
 	public static void main(String[] args) {
 		SaleTicket[] sts = new SaleTicket[3];
 		for (int i = 0; i < sts.length; i++) {
